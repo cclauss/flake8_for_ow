@@ -1,7 +1,7 @@
 sudo: false
 language: python
 python:
-    - "2.7.13"
+#   - "2.7.13"
     - "3.6.0"
 #   - "nightly"  # currently points to 3.7-dev
 before_install:
@@ -11,10 +11,10 @@ install:
 #before_script:
 script:
     # all flake8 errors with --exit-zero
-    flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
+    - flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
 #script:
     # stop the build if there are: E999 SyntaxError: invalid syntax
-    flake8 ~/openwhisk --count --select=E999 --max-line-length=127 --statistics
+    - flake8 ~/openwhisk --count --select=E999 --max-line-length=127 --statistics
 notifications:
     on_success: change
 #   on_failure: always
