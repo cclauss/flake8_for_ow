@@ -8,9 +8,12 @@ before_install:
     - git clone --depth=50 --branch=master https://github.com/openwhisk/openwhisk.git ~/openwhisk
 install:
     - pip install flake8
-before_script:
-    flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
+#before_script:
 script:
+    # all flake8 errors with --exit-zero
+    flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
+#script:
+    # stop the build if there are: E999 SyntaxError: invalid syntax
     flake8 ~/openwhisk --count --select=E999 --max-line-length=127 --statistics
 notifications:
     on_success: change
