@@ -10,7 +10,7 @@ before_install:
     - git clone --depth=50 --branch=master https://github.com/openwhisk/openwhisk.git ~/openwhisk
 install:
     # - pip install .
-    - pip install -r requirements.txt
+    - # pip install -r requirements.txt
     - pip install flake8
 # preflight
 before_script:
