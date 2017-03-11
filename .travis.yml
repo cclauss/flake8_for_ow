@@ -1,5 +1,4 @@
 sudo: false
-dist: trusty
 language: python
 python:
     - "2.7.13"
@@ -12,8 +11,7 @@ install:
 before_script:
     flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
 script:
-    # flake8 ~/openwhisk --count --select=E999--max-line-length=127 --statistics
-    ls -Fla --color  # a basic no-op
+    flake8 ~/openwhisk --count --select=E999 --max-line-length=127 --statistics
 notifications:
     on_success: change
-    on_failure: always
+#   on_failure: always
