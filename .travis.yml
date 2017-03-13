@@ -8,8 +8,7 @@ before_install:
     - git clone --depth=50 --branch=master https://github.com/openwhisk/openwhisk.git ~/openwhisk
 install:
     - pip install flake8
-#before_script:
-script:
+before_script:
     # all flake8 errors with --exit-zero
     - flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
     - flake8 ~/openwhisk/tools/admin/wskadmin       --count --max-line-length=127 --statistics --exit-zero
@@ -19,7 +18,7 @@ script:
     - flake8 ~/openwhisk/tools/health/killComponent --count --max-line-length=127 --statistics --exit-zero
     - flake8 ~/openwhisk/tools/health/kvstore       --count --max-line-length=127 --statistics --exit-zero 
     
-#script:
+script:
     # stop the build if there are: E999 SyntaxError: invalid syntax
     - flake8 ~/openwhisk --count --select=E999 --max-line-length=127 --statistics
     - flake8 ~/openwhisk/tools/admin/wskadmin       --count --select=E999 --max-line-length=127 --statistics --exit-zero
