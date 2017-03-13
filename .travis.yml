@@ -19,13 +19,13 @@ before_script:
     - flake8 ~/openwhisk/tools/health/kvstore       --count --max-line-length=127 --statistics --exit-zero 
 script:
     # stop the build if there are: E999 SyntaxError: invalid syntax
-    - flake8 ~/openwhisk --count --select=E999 --max-line-length=127 --statistics
-    - flake8 ~/openwhisk/tools/admin/wskadmin       --count --select=E999 --max-line-length=127 --statistics
-    - flake8 ~/openwhisk/tools/build/citool         --count --select=E999 --max-line-length=127 --statistics
-    - flake8 ~/openwhisk/tools/build/redo           --count --select=E999 --max-line-length=127 --statistics
-    - flake8 ~/openwhisk/tools/health/isAlive       --count --select=E999 --max-line-length=127 --statistics
-    - flake8 ~/openwhisk/tools/health/killComponent --count --select=E999 --max-line-length=127 --statistics
-    - flake8 ~/openwhisk/tools/health/kvstore       --count --select=E999 --max-line-length=127 --statistics
+    - flake8 ~/openwhisk --count --max-line-length=127 --select=E999 --statistics
+    - flake8 ~/openwhisk/tools/admin/wskadmin       --count --max-line-length=127 --select=E999 --statistics
+    - flake8 ~/openwhisk/tools/build/citool         --count --max-line-length=127 --select=E999 --statistics
+    - flake8 ~/openwhisk/tools/build/redo           --count --max-line-length=127 --select=E999 --statistics
+    - flake8 ~/openwhisk/tools/health/isAlive       --count --max-line-length=127 --select=E999 --statistics
+    - flake8 ~/openwhisk/tools/health/killComponent --count --max-line-length=127 --select=E999 --statistics
+    - flake8 ~/openwhisk/tools/health/kvstore       --count --max-line-length=127 --select=E999 --statistics
 notifications:
     on_success: change
 #   on_failure: always
