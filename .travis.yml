@@ -12,10 +12,11 @@ install:
     - pip install flake8
 before_script:
     # all flake8 errors with --exit-zero
-    - flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
-    - cd ~/openwhisk/tools/
-    - flake8 $NO_PY_EXTENSION_FILES --count --max-line-length=127 --statistics --exit-zero
+    - # flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
+    - # cd ~/openwhisk/tools/
+    - # flake8 $NO_PY_EXTENSION_FILES --count --max-line-length=127 --statistics --exit-zero
 script:
+    - ./invoke_run.py
     # stop the build if there are: E999 SyntaxError: invalid syntax
     - flake8 ~/openwhisk --count --max-line-length=127 --select=E999 --statistics
     - flake8 $NO_PY_EXTENSION_FILES --count --max-line-length=127 --select=E999 --statistics
