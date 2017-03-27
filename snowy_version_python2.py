@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 import sys
 
 if __name__ == '__main__':
