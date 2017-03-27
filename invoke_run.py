@@ -10,7 +10,7 @@ class invoke(object):
             sys.stdout.write('%s\n' % msg)
             return (502, {'error': 'The action did not return a dictionary.'})
 
-        self.binary = args[0]
+        self.binary = args
         print(self.binary)
         try:
             input = json.dumps(args)
