@@ -1,3 +1,6 @@
+import subprocess
+import sys
+
 class invoke(object):
     def run(self, args, env):
         def error(msg):
@@ -44,6 +47,7 @@ class invoke(object):
         except Exception:
             return error(last_line)
 
+print(sys.version)
 i = invoke()
 print(i.run('snowy_version_python2.py'))
 print(i.run('snowy_version_python3.py'))
