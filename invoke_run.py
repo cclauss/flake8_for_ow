@@ -11,6 +11,7 @@ class invoke(object):
             return (502, {'error': 'The action did not return a dictionary.'})
 
         self.binary = args[0]
+        print(self.binary)
         try:
             input = json.dumps(args)
             p = subprocess.Popen(
