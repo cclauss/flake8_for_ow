@@ -15,9 +15,8 @@ before_script:
     - # flake8 ~/openwhisk --count --max-line-length=127 --statistics --exit-zero
     - # cd ~/openwhisk/tools/
     - # flake8 $NO_PY_EXTENSION_FILES --count --max-line-length=127 --statistics --exit-zero
-    - chmod +x ./invoke_run.py
 script:
-    - ./invoke_run.py
+    - python ./invoke_run.py
     # stop the build if there are: E999 SyntaxError: invalid syntax
     - flake8 ~/openwhisk --count --max-line-length=127 --select=E999 --statistics
     - flake8 $NO_PY_EXTENSION_FILES --count --max-line-length=127 --select=E999 --statistics
