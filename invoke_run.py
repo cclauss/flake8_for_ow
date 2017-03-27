@@ -1,3 +1,4 @@
+import os
 import subprocess
 import sys
 
@@ -49,5 +50,5 @@ class invoke(object):
 
 print(sys.version)
 i = invoke()
-print(i.run('snowy_version_python2.py'))
-print(i.run('snowy_version_python3.py'))
+print(i.run('snowy_version_python2.py', os.environ))
+print(i.run('snowy_version_python3.py', os.environ))
