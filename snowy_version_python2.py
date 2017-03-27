@@ -3,7 +3,10 @@
 
 import sys
 
-if __name__ == '__main__':
+def main():
     s = ' '.join((u'❄ ☃ ❄', sys.version.split()[0], u'❄ ☃ ❄'))
     print(type(s))
-    print({'snowy_version': s})
+    return {'snowy_version': s}
+
+if __name__ == '__main__':
+    main()
