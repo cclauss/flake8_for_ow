@@ -45,5 +45,5 @@ class invoke(object):
             return error(last_line)
 
 i = invoke()
-print(i.run('snowy_version_py2.py'))
-print(i.run('snowy_version_py3.py'))
+print(i.run('snowy_version_python2.py'))
+print(i.run('snowy_version_python3.py'))
